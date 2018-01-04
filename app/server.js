@@ -5,5 +5,5 @@ print("Hello Server!!")
 
 var port = java.lang.System.getProperty("port")
 print("port: ", port)
-server.createServer(port, router)
+server.createServer(new Number(port), router)
 
