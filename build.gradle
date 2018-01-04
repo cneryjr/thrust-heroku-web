@@ -1,18 +1,12 @@
-// plugins {
-//   id "io.ratpack.ratpack-groovy" version "1.4.5"
-// }
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
 
+mainClassName = "br.com.softbox.thrust.main.Main"
 
 repositories {
   jcenter()
 }
-
-// mainClassName = "Main"
-mainClassName = "br.com.softbox.thrust.main.Main"
 
 dependencies {
   compile "com.heroku.sdk:heroku-jdbc:0.1.1"
