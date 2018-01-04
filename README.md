@@ -1,17 +1,16 @@
-# gradle-getting-started
+# thrust-getting-started
 
-A barebones Gradle app, which can easily be deployed to Heroku.
+A simple Thrust app, which can easily be deployed to Heroku.
 
-This application support the [Getting Started with Gradle on Heroku](https://devcenter.heroku.com/articles/getting-started-with-gradle-on-heroku) article - check it out.
+This application support the [Getting Started with Thrust on Heroku](https://github.com/cneryjr).
 
 ## Running Locally
 
 Make sure you have Java installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
 ```sh
-$ git clone https://github.com/heroku/gradle-getting-started.git
-$ cd gradle-getting-started
-$ ./gradlew stage
+$ git clone https://github.com/cneryjr/thrust-heroku-template.git
+$ cd thrust-heroku-template
 $ heroku local web
 ```
 

@@ -1,0 +1,40 @@
+// plugins {
+//   id "io.ratpack.ratpack-groovy" version "1.4.5"
+// }
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+
+repositories {
+  jcenter()
+}
+
+// mainClassName = "Main"
+mainClassName = "br.com.softbox.thrust.main.Main"
+
+dependencies {
+  compile "com.heroku.sdk:heroku-jdbc:0.1.1"
+  compile 'javax.servlet:javax.servlet-api:3.1.0'
+  // compile "org.postgresql:postgresql:9.4-1201-jdbc4"
+  compile fileTree(dir: 'jarlib', include: 'thrust.jar')
+  runtime fileTree(dir: 'app', include: '*.js')
+}
+
+task stage {
+
+  jar {
+    manifest { 
+      attributes "Main-Class": "$mainClassName"
+    }  
+
+    destinationDir new File("$rootDir/build/libs")
+
+    from {
+      configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+  }
+
+}
